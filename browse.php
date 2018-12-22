@@ -15,7 +15,7 @@ while($row=mysql_fetch_array($q))
 	echo $row["DESC_"]."<br>";
 	echo $row["category"]."<br>";
     echo "<a href='$row[formlink]' target='_blank' >Claim</a>"."<br>";
-    echo "<button type='submit'>DeleteThis</button>";
+    echo "<td><a href='delete.php?id2=$id&Pass=$password'>Delete</a></td>";
     echo "</form>";
     echo "<br>"."<br>"."<br>";  
 }
