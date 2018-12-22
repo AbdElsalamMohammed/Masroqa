@@ -10,6 +10,8 @@ $q=mysql_query("select * from item");
 
 while($row=mysql_fetch_array($q))
 {
+    $id=$row["ID"];
+    $password=$row["pass"];
     echo "<form class='theform' method='post' action='deletethis.php'>";
     echo " <img src='$row[photo]' >"."<br>" ;   
 	echo $row["DESC_"]."<br>";
