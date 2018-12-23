@@ -2,7 +2,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Registration</title>
+	<title>Masroqa</title>
 	<link rel="stylesheet" type="text/css" href="style.css">
 </head>
 <body>    
