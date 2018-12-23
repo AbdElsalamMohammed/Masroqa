@@ -2,15 +2,13 @@
 	session_start();
 
     // variable declaration
-	$username = "";
-	$email    = "";
 	$errors = array(); 
 	$_SESSION['success'] = "";
 
 	// connect to database
-	$db = mysqli_connect('localhost', 'root', '72147214', 'item');
+	$db = mysqli_connect('localhost', 'root', '11111111', 'item');
 
-	// REGISTER USER
+	// Upload Item
 	if (isset($_POST['reg_user'])) {
 		// receive all input values from the form
 		$Description = mysqli_real_escape_string($db, $_POST['Description']);
@@ -26,7 +24,7 @@
 		if (empty($FormLink)) { array_push($errors, "FormLink is required"); }
 		if (empty($ph)) { array_push($errors, "Photo is required"); }
 
-		// register user if there are no errors in the form
+		// Upload item if there are no errors in the form
 		if (count($errors) == 0) {
 			$password = md5($password_1);//encrypt the password before saving in the database
 			$query = "INSERT INTO item (pass , DESC_ , formlink , photo , category) 

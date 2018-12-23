@@ -2,7 +2,7 @@
 
 echo '<link rel="stylesheet" type="text/css" href="style.css">';
 
-$con=mysql_connect("localhost","root","72147214");
+$con=mysql_connect("localhost","root","11111111");
 
 mysql_select_db("item");
 
