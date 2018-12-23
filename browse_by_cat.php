@@ -1,3 +1,40 @@
+<?php
+// variable declaration
+$errors = array(); 
+
+echo '<link rel="stylesheet" type="text/css" href="style.css">';
+
+$db = mysqli_connect('localhost', 'root', '11111111', 'item');
+
+if (isset($_POST['verfiy_category'])) {
+	// receive input value from the form
+    $category = mysqli_real_escape_string($db, $_POST['category']);
+    
+	// form validation: ensure that the form is correctly filled
+    if (empty($category)) { array_push($errors, "Category is required"); }
+    
+	// display items if there are no errors in the form
+	if (count($errors) == 0) {
+	
+        $q=mysql_query("select * from item where category='$category'");
+
+        while($row=mysql_fetch_array($q))
+        {
+            $id=$row["ID"];
+            $password=$row["pass"];
+            echo "<form class='theform' method='post' action='deletethis.php'>";
+            echo " <img src='$row[photo]' >"."<br>" ;   
+            echo $row["DESC_"]."<br>";
+            echo $row["category"]."<br>";
+            echo "<a href='$row[formlink]' target='_blank' >Claim</a>"."<br>";
+            echo "<td><a href='delete.php?id2=$id&Pass=$password'>Delete</a></td>";
+            echo "</form>";
+            echo "<br>"."<br>"."<br>";  
+        }
+        mysql_close($con);
+	}
+}
+?>
 <!DOCTYPE html>
 <html>
 <head>
