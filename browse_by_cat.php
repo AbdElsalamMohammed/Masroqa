@@ -15,7 +15,10 @@ if (isset($_POST['verfiy_category'])) {
     
 	// display items if there are no errors in the form
 	if (count($errors) == 0) {
-	
+        $con=mysql_connect("localhost","root","11111111");
+
+        mysql_select_db("item");
+
         $q=mysql_query("select * from item where category='$category'");
 
         while($row=mysql_fetch_array($q))
